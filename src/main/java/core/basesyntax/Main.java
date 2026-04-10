@@ -5,7 +5,6 @@ import core.basesyntax.db.CsvFileReaderImpl;
 import core.basesyntax.db.FileWriter;
 import core.basesyntax.db.FileWriterImpl;
 import core.basesyntax.service.*;
-
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -20,8 +19,6 @@ public class Main {
 
         // 2. CONVERT TO OBJECTS
         DataConverter converter = new DataConverterImpl();
-        List<FruitTransaction> transactions =
-                converter.convertToTransaction(inputData);
 
         // 3. CREATE HANDLERS MAP
         Map<FruitTransaction.Operation, OperationHandler> handlers = new HashMap<>();
@@ -34,6 +31,8 @@ public class Main {
         OperationStrategy strategy = new OperationStrategyImpl(handlers);
 
         // 4. PROCESS TRANSACTIONS
+        List<FruitTransaction> transactions =
+                converter.convertToTransaction(inputData);
         ShopServiceImpl shopService = new ShopServiceImpl(strategy);
         shopService.process(transactions);
 
