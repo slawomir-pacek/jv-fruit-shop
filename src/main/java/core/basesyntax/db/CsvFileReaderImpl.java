@@ -10,25 +10,27 @@ public class CsvFileReaderImpl implements CsvFileReader {
 
     @Override
     public List<String> read(String filePath) {
-        List<String[]> result = new ArrayList<>();
+        List<String> result = new ArrayList<>();
 
         try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
+
             String line;
             boolean isHeader = true;
 
             while ((line = br.readLine()) != null) {
+
                 if (isHeader) {
                     isHeader = false;
                     continue;
                 }
 
-                String[] values = line.trim().split(",");
-                result.add(values);
+                result.add(line.trim());
             }
 
         } catch (IOException e) {
-            throw new RuntimeException("Cannot read file:" + filePath, e);
+            throw new RuntimeException("Cannot read file: " + filePath, e);
         }
-        return (List<String>) result;
+
+        return result;
     }
 }
