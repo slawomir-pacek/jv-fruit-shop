@@ -1,4 +1,4 @@
-package core.basesyntax.db;
+package core.basesyntax.io;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -13,7 +13,6 @@ public class CsvFileReaderImpl implements CsvFileReader {
         List<String> result = new ArrayList<>();
 
         try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
-
             String line;
             boolean isHeader = true;
 

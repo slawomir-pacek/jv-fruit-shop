@@ -1,4 +1,4 @@
-package core.basesyntax.service;
+package core.basesyntax.model;
 
 public class FruitTransaction {
 
@@ -52,7 +52,7 @@ public class FruitTransaction {
                     return op;
                 }
             }
-            throw new IllegalArgumentException("Unknown operation code: " + code);
+            throw new IllegalArgumentException("Unknown operation: " + code);
         }
     }
 }

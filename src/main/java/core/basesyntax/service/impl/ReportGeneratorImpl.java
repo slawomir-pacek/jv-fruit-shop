@@ -1,4 +1,6 @@
-package core.basesyntax.service;
+package core.basesyntax.service.impl;
+
+import core.basesyntax.service.ReportGenerator;
 
 import java.util.Map;
 
@@ -15,10 +17,10 @@ public class ReportGeneratorImpl implements ReportGenerator {
         StringBuilder sb = new StringBuilder();
         sb.append("fruit,quantity\n");
 
-        for (Map.Entry<String, Integer> e : storage.entrySet()) {
-            sb.append(e.getKey())
+        for (Map.Entry<String, Integer> entry : storage.entrySet()) {
+            sb.append(entry.getKey())
                     .append(",")
-                    .append(e.getValue())
+                    .append(entry.getValue())
                     .append("\n");
         }
 
