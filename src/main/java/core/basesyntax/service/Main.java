@@ -1,10 +1,9 @@
-package core.basesyntax;
+package core.basesyntax.service;
 
 import core.basesyntax.db.CsvFileReader;
 import core.basesyntax.db.CsvFileReaderImpl;
 import core.basesyntax.db.FileWriter;
 import core.basesyntax.db.FileWriterImpl;
-import core.basesyntax.service.*;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
