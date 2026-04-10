@@ -3,7 +3,6 @@ package core.basesyntax.service.impl;
 import core.basesyntax.model.FruitTransaction;
 import core.basesyntax.service.OperationHandler;
 import core.basesyntax.service.OperationStrategy;
-
 import java.util.Map;
 
 public class OperationStrategyImpl implements OperationStrategy {
